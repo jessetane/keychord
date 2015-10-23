@@ -1,0 +1,18 @@
+{
+  "name": "bitkey",
+  "version": "1.0.0",
+  "description": "binary chording keyboard",
+  "main": "index.js",
+  "scripts": {
+    "example": "source example/etc.sh; build-css --watch & build-js --watch"
+  },
+  "devDependencies": {
+    "build-css": "jessetane/build-css",
+    "build-js": "jessetane/build-js",
+    "is-power-of-two": "^1.0.0",
+    "field-selection": "^0.2.2"
+  },
+  "repository": "https://github.com/jessetane/bitkey.git",
+  "author": "jesse.tane@gmail.com",
+  "license": "WTFPL"
+}
