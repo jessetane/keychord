@@ -1,8 +1,7 @@
 {
-  "name": "bitkey",
+  "name": "keychord",
   "version": "1.0.0",
   "description": "binary chording keyboard",
-  "main": "index.js",
   "scripts": {
     "example": "source example/etc.sh; build-css --watch & build-js --watch"
   },
@@ -12,7 +11,7 @@
     "is-power-of-two": "^1.0.0",
     "field-selection": "^0.2.2"
   },
-  "repository": "https://github.com/jessetane/bitkey.git",
+  "repository": "https://github.com/jessetane/keychord.git",
   "author": "jesse.tane@gmail.com",
   "license": "WTFPL"
 }
