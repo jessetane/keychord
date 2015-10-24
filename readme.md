@@ -36,7 +36,7 @@ function onchord (evt) {
 // useful for updating user interface elements
 function onchange (evt) {
   console.log('chord changed', evt.chord)
-})
+}
 ```
 
 ## Example
