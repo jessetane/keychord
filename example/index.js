@@ -71,7 +71,7 @@ keychord(document.body, map, function (evt) {
 }, keychange)
 
 function keychange (evt) {
-  each('[data-output-id]', function (el) {
+  qsa('[data-output-id]').forEach(function (el) {
     if (el.getAttribute('data-output-id') === String(evt.chord)) {
       el.classList.add('hover')
     } else {
@@ -82,30 +82,30 @@ function keychange (evt) {
 }
 
 // handle number / letter hover
-each('.letter, .number', function (el) {
+qsa('.letter, .number').forEach(function (el) {
   el.addEventListener('mouseenter', mouseenter)
   el.addEventListener('mouseleave', mouseleave)
 })
 
 function mouseenter (evt) {
   var chord = parseInt(evt.target.getAttribute('data-output-id'), 10)
-  each('[data-output-id="' + chord + '"]', function (el) {
+  qsa('[data-output-id="' + chord + '"]').forEach(function (el) {
     el.classList.add('hover')
   })
   hoverkey(chord)
 }
 
 function mouseleave (evt) {
-  each('[data-output-id]', function (el) {
+  qsa('[data-output-id]').forEach(function (el) {
     el.classList.remove('hover')
   })
-  each('[data-input-id]', function (el) {
+  qsa('[data-input-id]').forEach(function (el) {
     el.classList.remove('hover')
   })
 }
 
 function hoverkey (chord) {
-  each('[data-input-id]', function (el) {
+  qsa('[data-input-id]').forEach(function (el) {
     var id = parseInt(el.getAttribute('data-input-id'), 10)
     if (id === chord) {
       el.classList.add('hover')
@@ -117,8 +117,7 @@ function hoverkey (chord) {
   })
 }
 
-function each (selector, fn) {
-  Array.prototype.slice.call(
-    document.querySelectorAll(selector)
-  ).forEach(fn)
+function qsa (selector, el) {
+  el = el || document
+  return Array.prototype.slice.call(el.querySelectorAll(selector))
 }
