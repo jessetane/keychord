@@ -70,15 +70,20 @@ keychord(document.body, map, function (evt) {
   console.log(evt.chord)
 }, keychange)
 
+// hightlight current chord
+var debounce = null
 function keychange (evt) {
-  qsa('[data-output-id]').forEach(function (el) {
-    if (el.getAttribute('data-output-id') === String(evt.chord)) {
-      el.classList.add('hover')
-    } else {
-      el.classList.remove('hover')
-    }
-  })
-  hoverkey(evt.chord)
+  clearTimeout(debounce)
+  debounce = setTimeout(function () {
+    qsa('[data-output-id]').forEach(function (el) {
+      if (el.getAttribute('data-output-id') === String(evt.chord)) {
+        el.classList.add('hover')
+      } else {
+        el.classList.remove('hover')
+      }
+    })
+    hoverkey(evt.chord)
+  }, 20)
 }
 
 // handle number / letter hover
