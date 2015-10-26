@@ -22,6 +22,7 @@ body {
 
 textarea {
   width: 100%;
+  font-family: inherit;
   font-size: 1.2em;
   color: #555;
   flex-grow: 1;
