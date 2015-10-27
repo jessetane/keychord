@@ -62,7 +62,12 @@ for (var i in keys) {
 // textarea keychords
 keychord(document.querySelector('textarea'), map, function (evt) {
   var letter = alphabet[evt.chord]
-  letter && selection.replace(this, letter)
+  if (letter) {
+    if (evt.shiftKey) {
+      letter = letter.toUpperCase()
+    }
+    selection.replace(this, letter)
+  }
 }, keychange)
 
 // body keychords
