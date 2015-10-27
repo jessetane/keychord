@@ -1,7 +1,7 @@
 # keychord
 A flexible chording keyboard in JavaScript.
 
-![Screenshot](example/screenshot.png)
+[![Screenshot](example/screenshot.png)](http://keychord.jessetane.com)
 
 ## Why
 The stenotype system is pretty rad, but is not suitable for generic input since chords map to entire words instead of individual characters. It also requires a true n-key-rollover keyboard, which most us unfortunately do not have. I am not sure whether chording individual letters can be faster than QWERTY or not, but this tool should make it easy to fool around.
